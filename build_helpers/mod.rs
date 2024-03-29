@@ -3,6 +3,8 @@ mod library_config;
 mod tool;
 
 pub use error::Error;
+
+#[allow(unused_imports)]
 pub use library_config::{
     append_path_var,
     merge_path_var,
@@ -10,4 +12,5 @@ pub use library_config::{
     Library,
     LibraryConfig,
 };
+
 pub use tool::{run_command, Tool};

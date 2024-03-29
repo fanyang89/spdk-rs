@@ -262,10 +262,11 @@ fn main() {
     }
 
     // Generate Rust bindings for SPDK.
-    let clang_args: Vec<String> = inc_dirs
+    let mut clang_args: Vec<String> = inc_dirs
         .iter()
         .map(|p| format!("-I{}", p.to_str().unwrap()))
         .collect();
+    clang_args.push("-Wno-implicit-function-declaration".to_string());
 
     let macros = Arc::new(RwLock::new(HashSet::new()));
 
